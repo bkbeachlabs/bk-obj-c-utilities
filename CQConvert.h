@@ -38,6 +38,6 @@
 /**
  * Determines if the given integer is the ascii value of a capital letter.
  */
-+ (BOOL)intIsACapitalLetter:(int)intIn;
++ (BOOL)intIsACapitalLetter:(NSInteger)intIn;
 
 @end

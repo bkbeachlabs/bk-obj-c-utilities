@@ -34,7 +34,7 @@
 
 + (NSMutableArray *)convertStringToASCIIMutableArray:(NSString *)stringIn {
     NSMutableArray *arrayOut = [NSMutableArray arrayWithCapacity:stringIn.length];
-    for (int i=0; i<stringIn.length; i++) {
+    for (NSInteger i=0; i<stringIn.length; i++) {
         unichar ch = [stringIn characterAtIndex:i];
         if (ch > 96 && ch<123) ch = ch - 32; // convert to all capitals
         [arrayOut insertObject:[NSNumber numberWithChar:ch] atIndex:i];
@@ -44,7 +44,7 @@
 
 + (NSString *)convertASCIIArrayToString:(NSArray *)arrayIn {
     NSString *stringOut = @"";
-    for (int i=0; i<[arrayIn count]; i++) {
+    for (NSInteger i=0; i<[arrayIn count]; i++) {
         //unichar thisChar = (unichar)[arrayIn objectAtIndex:i];
         NSString *thisChar = [NSString stringWithFormat:@"%c",[[arrayIn objectAtIndex:i] intValue]];
         stringOut = [stringOut stringByAppendingString:thisChar];
@@ -52,7 +52,7 @@
     return stringOut;
 }
 
-+ (BOOL)intIsACapitalLetter:(int)intIn {
++ (BOOL)intIsACapitalLetter:(NSInteger)intIn {
     return (intIn > 64 && intIn <91);
 }
 
